@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>局域网聊天室测试版本1</title>
+    <style>
+	body{
+		background-color:gray;
+	}
+	.pageHead h1{
+		background-color:green;
+		text-align:center;
+		margin:auto;
+		height:50px;
+		line-height:50px;
+	}
+	.pageBody{
+		height:500px;
+	}
+	.pageIndex{
+		width:200px;
+		height:auto;
+		float:left
+	}
+	.pageIndex ul{
+		width:inherit;
+		height:200px;
+		list-style:none;
+	}
+	.pageIndex ul li{
+		width:inherit;
+		margin:20px 0px 20px 0px;
+		font-size:25px;
+		text-decoration:none;
+		cursor:pointer;
+	}
+	.pageBody-content{
+		float:right;
+		margin-top:10px;
+	}
+	.pageBody-content h3{
+		text-align:center;
+	}
+    </style>
+    <script type="text/javascript">
+		function summary(){
+			var doc = document.getElementsByClassName("pageBody-content");
+			var contentWidth = document.body.clientWidth - document.getElementsByClassName("pageIndex").item(0).offsetWidth;
+			doc.item(0).style.width = contentWidth + "px";
+			doc.item(0).innerHTML= "<h3>--功能简介--</h3><p本>局域网聊天目前支持账号注册，登录，聊天显示昵称</p>";
+			//alert(document.getElementsByClassName("pageIndex").item(0).style.width);
+			return 0;
+		}
+		function guide(){
+			var doc = document.getElementsByClassName("pageBody-content");
+			var contentWidth = document.body.clientWidth - document.getElementsByClassName("pageIndex").item(0).offsetWidth;
+			doc.item(0).style.width = contentWidth + "px";
+			doc.item(0).innerHTML= "<h3>--使用方法--</h3><p>使用起来没什么特别的， 开启服务端客户端和服务端在同一局域网 ，注册账号登陆就可以聊天了</p>";
+			//alert(document.getElementsByClassName("pageIndex").item(0).style.width);
+			return 0;
+		}
+		function notice(){
+			var doc = document.getElementsByClassName("pageBody-content");
+			var contentWidth = document.body.clientWidth - document.getElementsByClassName("pageIndex").item(0).offsetWidth;
+			doc.item(0).style.width = contentWidth + "px";
+			doc.item(0).innerHTML= "<h3>--使用方法--</h3><p>需要SQL Server，自己把服务端中的AccountDB目录下数据库添加到SqlServer中，否则会发生未知错误</p><p>需要修改服务端App.config文件中的连接字符串，不会的自行百度</p><p>服务端不可双开，端口会冲突 多个客户端不可在同一目录测试， 配置文件会冲突</p>";
+			//alert(document.getElementsByClassName("pageIndex").item(0).style.width);
+			return 0;
+		}
+		function last(){
+			var doc = document.getElementsByClassName("pageBody-content");
+			var contentWidth = document.body.clientWidth - document.getElementsByClassName("pageIndex").item(0).offsetWidth;
+			doc.item(0).style.width = contentWidth + "px";
+			doc.item(0).innerHTML= "<h3>--写在最后--</h3><p>本项目仅供wpf学习者参考， 作者CG，转载请注明出处</p><p>未经原作者同意， 不得用于商业目的，原作者CG保留一切权利！</p>";
+			//alert(document.getElementsByClassName("pageIndex").item(0).style.width);
+			return 0;
+		}
+		onload = function(){
+			summary();
+		}
+    </script>
+</head>
+<body>
+<div class="pageHead">
+    <!--页头-->
+    <h1> 局域网聊天室</h1>
+    </div>
+    
+    <div class="pageBody">
+    <!--页体-->
+    	<div class="pageIndex">
+        <ul >
+        	<li onClick="summary()">功能简介</a></li>
+            <li onClick="guide()">使用方法</a></li>
+            <li onClick="notice()">注意事项</a></li>
+            <li onClick="last()">写在最后</a></li>
+        </ul>
+        </div>
+    	<div class="pageBody-content">
+        	
+        </div>
+	</div>
+</body>
+</html>
